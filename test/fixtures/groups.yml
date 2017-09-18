@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raid_leader: 1
+  raid_id: 1
+  difficulty: MyString
+  time: 2017-09-18 10:03:44
+
+two:
+  raid_leader: 1
+  raid_id: 1
+  difficulty: MyString
+  time: 2017-09-18 10:03:44

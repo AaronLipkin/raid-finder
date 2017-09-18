@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  expansion: 1
+  difficulties: MyString
+  videos: MyString
+  info: MyString
+
+two:
+  name: MyString
+  expansion: 1
+  difficulties: MyString
+  videos: MyString
+  info: MyString

@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Klasse.create([
+	{name:  "Hunter"}
+
+	])
+
+
+Character.create([
+	{ name: "Cabhan", user: 0, klasse_id: 1, primary_spec: 0, item_level: 905, armory: "test.com", server: "Ghostlands"}
+	
+
+
+	])
