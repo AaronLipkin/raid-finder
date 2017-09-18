@@ -5,7 +5,7 @@ class KlassesController < ApplicationController
   def index
     @klasses = Klasse.all
 
-    render json: @klasses
+    render json: @klasses.to_json(include: :specs)
   end
 
   # GET /klasses/1

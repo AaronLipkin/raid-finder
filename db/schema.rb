@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   create_table "specs", force: :cascade do |t|
     t.string "name"
     t.string "role"
-    t.integer "klasse"
+    t.integer "klasse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

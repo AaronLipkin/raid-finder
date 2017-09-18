@@ -15,6 +15,11 @@ Klasse.create([
 Character.create([
 	{ name: "Cabhan", user: 0, klasse_id: 1, primary_spec: 0, item_level: 905, armory: "test.com", server: "Ghostlands"}
 	
+	])
 
+Spec.create([
+	{name: "Marksmanship", role: "DPS", klasse_id:1},
+	{name: "Survival", role: "DPS", klasse_id:1},
+	{name: "Beast Mastery", role: "DPS", klasse_id:1},
 
 	])
