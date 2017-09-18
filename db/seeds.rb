@@ -6,20 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Klasse.create([
+Raid.create!([
+	{name: "Tomb of Sargeras", expansion_id: 1, difficulties: ["Mythic","Heroic","Normal","LFR"], videos: [], info:""}
+
+	])
+
+Klasse.create!([
 	{name:  "Hunter"}
 
 	])
 
+Spec.create!([
+	{name: "Marksmanship", role: "DPS", klasse_id: 1},
+	{name: "Survival", role: "DPS", klasse_id: 1},
+	{name: "Beast Mastery", role: "DPS", klasse_id: 1}
 
-Character.create([
-	{ name: "Cabhan", user: 0, klasse_id: 1, primary_spec: 0, item_level: 905, armory: "test.com", server: "Ghostlands"}
+])
+
+
+User.create!([
+	{username: "aaron", password: "password"}
+
+	])
+
+Character.create!([
+	{ name: "Cabhan", user_id: 1, klasse_id: 1, spec_id: 1, item_level: 905, armory: "test.com", server: "Ghostlands"}
 	
 	])
 
-Spec.create([
-	{name: "Marksmanship", role: "DPS", klasse_id:1},
-	{name: "Survival", role: "DPS", klasse_id:1},
-	{name: "Beast Mastery", role: "DPS", klasse_id:1},
+Group.create!([
+	{raid_leader_id: 1, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now}
 
 	])

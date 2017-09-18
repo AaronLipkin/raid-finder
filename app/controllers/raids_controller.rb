@@ -5,7 +5,7 @@ class RaidsController < ApplicationController
   def index
     @raids = Raid.all
 
-    render json: @raids
+    render json: @raids.to_json(include: :groups)
   end
 
   # GET /raids/1

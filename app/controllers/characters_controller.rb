@@ -5,12 +5,12 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.all
 
-    render json: @characters.to_json(include: :klasse)
+    render json: @characters
   end
 
   # GET /characters/1
   def show
-    render json: @character
+    render json: @character.to_json(include: :klasse)
   end
 
   # POST /characters

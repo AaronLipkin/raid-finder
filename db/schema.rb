@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170918154025) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.integer "user"
+    t.integer "user_id"
     t.integer "klasse_id"
-    t.integer "primary_spec"
+    t.integer "spec_id"
     t.integer "item_level"
     t.string "armory"
     t.string "server"
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 20170918154025) do
 
   create_table "raids", force: :cascade do |t|
     t.string "name"
-    t.integer "expansion"
-    t.string "difficulties"
-    t.string "videos"
+    t.integer "expansion_id"
+    t.string "difficulties", default: [], array: true
+    t.string "videos", default: [], array: true
     t.string "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
