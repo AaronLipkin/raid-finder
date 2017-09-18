@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
 
   create_table "expansions", force: :cascade do |t|
     t.string "name"
-    t.string "color_list"
+    t.string "colors", default: [], array: true
     t.integer "release_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   create_table "requests", force: :cascade do |t|
     t.integer "group_id"
     t.integer "character_id"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

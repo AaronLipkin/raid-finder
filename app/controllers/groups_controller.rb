@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
-    render json: @groups.to_json(include: :raid)
+    render json: @groups.to_json(include: :characters)
   end
 
   # GET /groups/1

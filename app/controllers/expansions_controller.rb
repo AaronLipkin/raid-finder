@@ -5,7 +5,7 @@ class ExpansionsController < ApplicationController
   def index
     @expansions = Expansion.all
 
-    render json: @expansions
+    render json: @expansions.to_json(include: :raids)
   end
 
   # GET /expansions/1
