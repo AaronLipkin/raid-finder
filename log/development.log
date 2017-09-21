@@ -10332,3 +10332,435 @@ Processing by UsersController#index as */*
 Completed 200 OK in 51ms (Views: 0.1ms | ActiveRecord: 3.6ms)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2017-09-20 22:55:50 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.9ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-20 22:59:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 63ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-20 22:59:40 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:32:24 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:34:56 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:41:26 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/currentUser" for 127.0.0.1 at 2017-09-20 23:49:43 -0500
+  
+SyntaxError (/Users/aaronlipkin/dev/Projects/raid-finder/raid_finder_api/config/routes.rb:14: syntax error, unexpected ':'
+      get '/currentuser'. to: 'users#currentUser'
+                             ^):
+  
+config/routes.rb:14: syntax error, unexpected ':'
+Started POST "/users/currentUser" for 127.0.0.1 at 2017-09-20 23:50:28 -0500
+  
+SyntaxError (/Users/aaronlipkin/dev/Projects/raid-finder/raid_finder_api/config/routes.rb:14: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      get '/currentuser'. to: 'users#curr
+           ^
+/Users/aaronlipkin/dev/Projects/raid-finder/raid_finder_api/config/routes.rb:14: syntax error, unexpected ':'
+      get '/currentuser'. to: 'users#currentUser'
+                             ^):
+  
+config/routes.rb:14: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+config/routes.rb:14: syntax error, unexpected ':'
+Started POST "/users/currentUser" for 127.0.0.1 at 2017-09-20 23:50:50 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/users/currentUser"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/currentUser" for 127.0.0.1 at 2017-09-20 23:51:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"currentUser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 3.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=currentUser):
+  
+app/controllers/users_controller.rb:77:in `set_user'
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-20 23:52:11 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 18.5ms)
+
+
+  
+NoMethodError (undefined method `id' for #<String:0x007f827d91f238>):
+  
+app/controllers/application_controller.rb:34:in `authorize_user'
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-20 23:53:28 -0500
+Processing by UsersController#currentUser as HTML
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-20 23:53:47 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `id' for #<String:0x007f827f15c008>):
+  
+app/controllers/application_controller.rb:34:in `authorize_user'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:56:16 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:58:13 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 23:59:21 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-21 00:01:09 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:01:19 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for #<String:0x007f827bc116c8>):
+  
+app/controllers/application_controller.rb:34:in `authorize_user'
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:01:49 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (3.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 27.5ms)
+
+
+  
+NoMethodError (undefined method `id' for #<String:0x007f827cc09738>):
+  
+app/controllers/application_controller.rb:36:in `authorize_user'
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:03:05 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:04:15 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-21 00:04:26 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:04:29 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-09-21 00:07:42 -0500
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mLedger Load (6.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (2.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.8ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (4.5ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.4ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mRaid Load (6.9ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 69.8ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2017-09-21 00:07:43 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.5ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKlasse Load (6.4ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.5ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.4ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.7ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.5ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRaid Load (0.9ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.2ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-09-21 00:08:03 -0500
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mRaid Load (0.2ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2017-09-21 00:08:43 -0500
+Processing by UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2017-09-21 00:08:45 -0500
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.1ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.5ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mRaid Load (0.2ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2017-09-21 00:08:46 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.4ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.4ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.3ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.4ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCharacter Load (5.5ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRaid Load (0.2ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 0.1ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:10:02 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2017-09-21 00:10:02 -0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.5ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."group_id" = $1[0m  [["group_id", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.5ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.4ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.2ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.2ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mKlasse Load (0.3ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mSpec Load (0.4ms)[0m  [1m[34mSELECT  "specs".* FROM "specs" WHERE "specs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mKlasse Load (1.0ms)[0m  [1m[34mSELECT  "klasses".* FROM "klasses" WHERE "klasses"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mRaid Load (0.4ms)[0m  [1m[34mSELECT  "raids".* FROM "raids" WHERE "raids"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Character Load (0.1ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:10:56 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:11:30 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Filter chain halted as :authorize_user rendered or redirected
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:12:47 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:14:29 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `data' for #<User:0x007f827cbc6730>):
+  
+app/controllers/users_controller.rb:17:in `currentUser'
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:14:47 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/currentuser" for 127.0.0.1 at 2017-09-21 00:15:28 -0500
+Processing by UsersController#currentUser as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+

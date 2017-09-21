@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  before_action :authenticate_token, except: [:login, :create]
-
+  before_action :authenticate_token, except: [:login, :create, :currentUser]
+  before_action :authorize_user, except: [:login, :create, :index,  :currentUser]
 
   def login
     user = User.find_by(username: params[:user][:username])
@@ -11,6 +11,14 @@ class UsersController < ApplicationController
     else
       render json: {status: 401, message: "Unauthorized"}
     end
+  end
+
+  def currentUser
+    user_id = get_current_user.id
+
+    @user = User.find(user_id)
+
+    render json: @user.to_json(include: [:characters, :groups])
   end
 
   # GET /users
