@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     @user = User.find(user_id)
 
-    render json: @user.to_json(include: [:characters, :groups])
+    render json: @user.to_json(include: [{characters: {include: {klasse: {include: :specs}}}}, :groups])
   end
 
   # GET /users

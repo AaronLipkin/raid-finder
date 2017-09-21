@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   def index
     @requests = Request.all
 
-    render json: @requests
+    render json: @requests.to_json(include: [{character: {include: :klasse}}, :spec])
   end
 
   # GET /requests/1
@@ -46,6 +46,6 @@ class RequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def request_params
-      params.require(:request).permit(:group_id, :character_id)
+      params.require(:request).permit(:group_id, :character_id, :spec_id, :role, :note)
     end
 end

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
     t.integer "klasse_id"
     t.integer "spec_id"
     t.integer "item_level"
+    t.string "faction"
     t.string "armory"
     t.string "server"
     t.datetime "created_at", null: false
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170918154025) do
     t.integer "raid_leader_id"
     t.integer "raid_id"
     t.string "difficulty"
+    t.integer "max_size"
+    t.string "faction"
     t.datetime "go_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -76,6 +79,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
     t.integer "group_id"
     t.integer "character_id"
     t.string "role"
+    t.integer "spec_id"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

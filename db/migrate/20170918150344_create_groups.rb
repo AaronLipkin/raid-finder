@@ -5,6 +5,8 @@ class CreateGroups < ActiveRecord::Migration[5.1]
       t.integer :raid_leader_id
       t.integer :raid_id
       t.string :difficulty
+      t.integer :max_size
+      t.string :faction
       t.timestamp :go_time
 
       t.timestamps
