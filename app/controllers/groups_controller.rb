@@ -5,12 +5,12 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
-    render json: @groups.to_json(include: :characters)
+    render json: @groups.to_json(include: [{ledgers: {include: [:character, :spec]}}, :raid, :character])
   end
 
   # GET /groups/1
   def show
-    render json: @group
+    render json: @group.to_json(include: [{ledgers: {include: [:character, {spec: {include: :klasse}}]}}, :raid, :character])
   end
 
   # POST /groups

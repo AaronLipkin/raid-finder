@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   end
 
   create_table "groups", force: :cascade do |t|
+    t.string "name"
     t.integer "raid_leader_id"
     t.integer "raid_id"
     t.string "difficulty"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
+    t.string "css_style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   create_table "ledgers", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "character_id"
-    t.string "role"
+    t.integer "spec_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["character_id"], name: "index_ledgers_on_character_id"
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   create_table "requests", force: :cascade do |t|
     t.integer "group_id"
     t.integer "character_id"
+    t.string "role"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,7 +91,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
