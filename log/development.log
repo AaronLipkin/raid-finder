@@ -10258,3 +10258,77 @@ Processing by UsersController#login as */*
 Completed 200 OK in 130ms (Views: 1.4ms | ActiveRecord: 21.2ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:00:00 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:03:03 -0500
+Processing by UsersController#index as */*
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:05:10 -0500
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:19:in `decode_token'
+app/controllers/application_controller.rb:5:in `authenticate_token'
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:05:41 -0500
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:19:in `decode_token'
+app/controllers/application_controller.rb:5:in `authenticate_token'
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:06:50 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:19:in `decode_token'
+app/controllers/application_controller.rb:5:in `authenticate_token'
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:10:49 -0500
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::ExpiredSignature (Signature has expired):
+  
+app/controllers/application_controller.rb:20:in `decode_token'
+app/controllers/application_controller.rb:5:in `authenticate_token'
+Started POST "/users/login" for 127.0.0.1 at 2017-09-20 22:14:25 -0500
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"aaron", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aaron"], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 0.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:15:00 -0500
+Processing by UsersController#index as */*
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-09-20 22:19:21 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."raid_leader_id" = $1[0m  [["raid_leader_id", 1]]
+Completed 200 OK in 51ms (Views: 0.1ms | ActiveRecord: 3.6ms)
+
+
