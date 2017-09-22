@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :update, :destroy]
+  before_action :set_request, only: [:accept, :reject, :update, :destroy]
 
   # GET /requests
   def index
@@ -10,7 +10,29 @@ class RequestsController < ApplicationController
 
   # GET /requests/1
   def show
+    @requests = Request.where(group_id:params[:id])
+    render json: @requests.to_json(include: [{character: {include: :klasse}}, :spec])
+  end
+
+
+  def accept
+    ledger_params = {group_id: @request.group_id, character_id: @request.character_id, spec_id: @request.spec_id}
+    @ledger = Ledger.new(ledger_params)
+    @request.update({status: "accepted"})
+
+    if @ledger.save
+      render json: @ledger, status: :created, location: @ledger, request: @request
+    else
+      render json: @ledger.errors, status: :unprocessable_entity
+    end
+
+  end
+
+  def reject
+    @request.update({status: "rejected"})
     render json: @request
+
+
   end
 
   # POST /requests

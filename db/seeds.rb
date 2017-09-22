@@ -66,7 +66,9 @@ Character.create!([
 	])
 
 Group.create!([
-	{name: "Enders game was a good movie", raid_leader_id: 1, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Alliance"}
+	{name: "Enders game was a good movie", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Alliance"},
+	{name: "WelshLords", raid_leader_id: 1, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Horde"},
+	{name: "Belf Master Race", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Alliance"}
 
 	])
 

@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20170918154025) do
     t.string "role"
     t.integer "spec_id"
     t.string "note"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

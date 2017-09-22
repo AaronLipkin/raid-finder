@@ -6,6 +6,7 @@ class CreateRequests < ActiveRecord::Migration[5.1]
       t.string :role
       t.integer :spec_id
       t.string :note
+      t.string :status
 
       t.timestamps
     end
