@@ -7,13 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Expansion.create!([
-	{name: "Legion", colors: ['#50dc28', '#6a4180', '#333541'], release_order: 7}
+	{name: "Legion", colors: ['#50dc28', '#6a4180'], release_order: 7},
+	{name: "Warlords of Draenor", colors: ['#e53101', '#888586'], release_order: 6},
+	{name: "Wrath of the Lich King", colors: ['blue', 'black'], release_order: 3}
 
 	])
 
 
 Raid.create!([
-	{name: "Tomb of Sargeras", expansion_id: 1, difficulties: ["Mythic","Heroic","Normal","LFR"], videos: [], info:""}
+	{name: "Tomb of Sargeras", expansion_id: 1, difficulties: ["Mythic","Heroic","Normal","LFR"], videos: ['ATg67eE7uL0','Td0pUwrBWjc'], info:"Soak mechanics everywhere."},
+	{name: "The Nighthold", expansion_id: 1, difficulties: ["Mythic","Heroic","Normal","LFR"], videos: ['I3QJ8Pgjj3c','HF1oQqG2maY'], info:"The final boss is Gul-dan... again."},
+	{name: "Helfire Citadel", expansion_id: 2, difficulties: ["Mythic","Heroic","Normal","LFR"], videos: ['Wq4Y7ztznKc','TLzhlsEFcVQ'], info:"Bad expansion, great raid."},
+	{name: "Icecrown Citadel", expansion_id: 3, difficulties: ["Heroic 10 Man","Heroic 25 Man","Normal"], videos: ['ZP3IWX-r7ck','aZzzxJXlh-U'], info:"Who the hell doesn't know Arthas?!"}
+
 
 	])
 
@@ -23,7 +29,8 @@ Klasse.create!([
 	{name:  "Warrior", css_style: "warrior"},
 	{name:  "Paladin", css_style: "paladin"},
 	{name:  "Rogue", css_style: "rogue"},
-	{name:  "Priest", css_style: "priest"}
+	{name:  "Priest", css_style: "priest"},
+	{name:  "Shaman", css_style: "shaman"}
 
 	])
 
@@ -44,14 +51,18 @@ Spec.create!([
 	{name: "Outlaw", role: "DPS", klasse_id: 5},
 	{name: "Holy", role: "Healer", klasse_id: 6},
 	{name: "Discipline", role: "Healer", klasse_id: 6},
-	{name: "Shadow", role: "DPS", klasse_id: 6}
+	{name: "Shadow", role: "DPS", klasse_id: 6},
+	{name: "Elemental", role: "Healer", klasse_id: 7},
+	{name: "Enhancement", role: "Healer", klasse_id: 7},
+	{name: "Restoration", role: "DPS", klasse_id: 7}
 
 
 ])
 
 
 User.create!([
-	{username: "aaron", password: "password"}
+	{username: "aaron", password: "password"},
+	{username: "charlie", password: "password"}
 
 	])
 
@@ -62,13 +73,14 @@ Character.create!([
 	{ name: "Perrolin", user_id: 1, klasse_id: 4, spec_id: 10, item_level: 909, armory: "test.com", server: "Doomhammer", faction: "Alliance"},
 	{ name: "Rougehype", user_id: 1, klasse_id: 5, spec_id: 12, item_level: 909, armory: "test.com", server: "Doomhammer", faction: "Alliance"},
 	{ name: "Priesthype", user_id: 1, klasse_id: 6, spec_id: 16, item_level: 909, armory: "test.com", server: "Ghostlands", faction: "Horde"},
+	{ name: "Shammyman", user_id: 2, klasse_id: 7, spec_id: 18, item_level: 909, armory: "test.com", server: "Mal-Ganis", faction: "Horde"}
 	
 	])
 
 Group.create!([
-	{name: "Enders game was a good movie", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Alliance"},
-	{name: "WelshLords", raid_leader_id: 1, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Horde"},
-	{name: "Belf Master Race", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, max_size: 25, faction: "Alliance"}
+	{group_name: "Enders game was a good movie", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, faction: "Alliance"},
+	{group_name: "WelshLords", raid_leader_id: 7, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, faction: "Horde"},
+	{group_name: "Belf Master Race", raid_leader_id: 3, raid_id: 1, difficulty: "Mythic", go_time: DateTime.now, faction: "Alliance"}
 
 	])
 

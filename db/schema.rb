@@ -37,11 +37,10 @@ ActiveRecord::Schema.define(version: 20170918154025) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "name"
+    t.string "group_name"
     t.integer "raid_leader_id"
     t.integer "raid_id"
     t.string "difficulty"
-    t.integer "max_size"
     t.string "faction"
     t.datetime "go_time"
     t.datetime "created_at", null: false

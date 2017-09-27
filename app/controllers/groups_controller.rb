@@ -10,15 +10,18 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   def show
-    render json: @group.to_json(include: [{ledgers: {include: [:character, {spec: {include: :klasse}}]}}, :raid, :character])
+    render json: {group: @group.to_json(include: [{ledgers: {include: [:character, {spec: {include: :klasse}}]}}, :raid, :character]), members: @group.character_ids}
   end
 
   # POST /groups
   def create
+    spec_id = group_params[:spec_id]
+    group_params.delete :spec_id
     @group = Group.new(group_params)
 
+
     if @group.save
-      render json: @group, status: :created, location: @group
+        render json: @group, status: :created, location: @group
     else
       render json: @group.errors, status: :unprocessable_entity
     end
@@ -46,6 +49,6 @@ class GroupsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def group_params
-      params.require(:group).permit(:raid_leader, :raid_id, :difficulty, :time)
+      params.require(:group).permit(:raid_leader_id, :raid_id, :difficulty, :go_time, :faction, :group_name, :spec_id)
     end
-end
+  end

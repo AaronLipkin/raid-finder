@@ -46,6 +46,6 @@ class LedgersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ledger_params
-      params.require(:ledger).permit(:group_id, :character_id, :role)
+      params.require(:ledger).permit(:group_id, :character_id, :spec_id)
     end
 end
